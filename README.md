@@ -35,6 +35,7 @@
     set wifi-sec.key-mgmt wpa-eap
     save
     activate
+    quit
     ```
 
 * Update your Linux packages with the following commands:
