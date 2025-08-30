@@ -4,28 +4,18 @@
 
 * Get the latest [JetBot image](https://jetbot.org/master/software_setup/sd_card.html) and burn it to your SD card using [Balena Etcher](https://etcher.balena.io/) or [Rufus](https://rufus.ie/).
 
-* Connect to your JetBot's serial port using any terminal emulator via USB.
-  * Baud rate: 115200.
-  * Arduino IDE's serial monitor works well too.
-
-* Login into the JetBot with the following credentials:
+* Connect to your JetBot's serial port (default: `115200 8N1`) using any terminal emulator via on-board USB. The JetBot will prompt you for a username and password.
 
     ```bash
-    Username: jetbot
-    Password: jetbot
-    ```
+    jetbot # Username
+    jetbot # Password
 
-* Connect to WiFi
-
-    ```bash
+    # Connect to WiFi
     sudo nmcli device wifi connect <SSID> password <PASSWORD>
-    ```
 
-  * for NYU WiFi:
-
-    ```bash
+    # For NYU WiFi
+    # Replace <NETID> and <PASSWORD> with your NYU credentials
     sudo nmcli con add type wifi ifname wlan0 con-name nyu ssid nyu
-
     sudo nmcli con edit id nyu
     set ipv4.method auto
     set 802-1x.eap peap
@@ -36,31 +26,38 @@
     save
     activate
     quit
-    ```
 
-* Update your Linux packages with the following commands:
-
-    ```bash
+    #Update your Linux packages
     sudo apt update
     sudo apt upgrade -y
-    ```
 
-* Get the JetBot's IP address:
+    # Optional
+    sudo apt install python3-pip -y
 
-    ```bash
+    # Get the JetBot's IP address
     ip addr show wlan0
+
+    # Logout and close the serial communication
+    exit
     ```
 
-* Connect to the JetBot's Jupyter Notebook web interface:
+* Connect to the JetBot's Jupyter Notebook web interface in your browser:
 
     ```bash
-    http://<IP_ADDRESS>:8888
+    # Replace <JETBOT_IP_ADDRESS> with your JetBot's IP address
+    http://<JETBOT_IP_ADDRESS>:8888
     ```
 
-* Open a new terminal in the web interface, navigate to the workspace and install the JetBot Python library:
+* Open a new terminal in the web interface.
 
     ```bash
+    # You are already root
+    # Update the JetBot's Jupyter Notebook packages
+    apt update
+    apt upgrade -y
     cd /
     cd workspace/jetbot
+    pip3 install setuptools
     python3 setup.py install
+    exit
     ```
