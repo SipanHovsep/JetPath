@@ -24,9 +24,9 @@
   * for NYU WiFi:
 
     ```bash
-    nmcli con add type wifi ifname wlan0 con-name nyu ssid nyu
+    sudo nmcli con add type wifi ifname wlan0 con-name nyu ssid nyu
 
-    nmcli con edit id nyu
+    sudo nmcli con edit id nyu
     set ipv4.method auto
     set 802-1x.eap peap
     set 802-1x.phase2-auth mschapv2
