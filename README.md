@@ -65,6 +65,14 @@
     # Update the JetBot's Jupyter Notebook packages
     apt update
     apt upgrade -y
+
+    #It is probably best to clone the JetBot repository
+    cd /
+    rm -rf workspace/jetbot
+    git clone https://github.com/NVIDIA-AI-IOT/jetbot.git
+
+
+    # Install JetBot packages
     cd /
     cd workspace/jetbot
     pip3 install setuptools
