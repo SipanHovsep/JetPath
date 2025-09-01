@@ -4,7 +4,7 @@
 
 * Get the latest [JetBot image](https://jetbot.org/master/software_setup/sd_card.html) and burn it to your SD card using [Balena Etcher](https://etcher.balena.io/) or [Rufus](https://rufus.ie/).
 
-* Connect to your JetBot's serial port (default: `115200 8N1`) using any terminal emulator via on-board USB. The JetBot will prompt you for a username and password.
+* Connect to your JetBot's serial port (default: `115200 8N1`) using any terminal emulator (e.g. [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)) via on-board USB. The JetBot will prompt you for a username and password.
 
     ```bash
     jetbot # Username
@@ -31,8 +31,16 @@
     sudo apt update
     sudo apt upgrade -y
 
-    # Optional
+    # Make GUI the default
+    sudo systemctl set-default graphical.target
+
+    # Optional (Install pip3 if not already installed)
     sudo apt install python3-pip -y
+
+    # Optional (Extend the image to the entire size of the SD card)
+    sudo apt install cloud-guest-utils
+    sudo growpart /dev/mmcblk0 1
+    sudo resize2fs /dev/mmcblk0p1
 
     # Get the JetBot's IP address
     ip addr show wlan0
