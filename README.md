@@ -27,10 +27,6 @@
     activate
     quit
 
-    #Update your Linux packages
-    sudo apt update
-    sudo apt upgrade -y
-
     # Make GUI the default
     sudo systemctl set-default graphical.target
 
@@ -61,21 +57,15 @@
 * Open a new terminal in the web interface.
 
     ```bash
-    # You are already root
-    # Update the JetBot's Jupyter Notebook packages
-    apt update
-    apt upgrade -y
-
-    #It is probably best to clone the JetBot repository
-    cd /
-    rm -rf workspace/jetbot
-    git clone https://github.com/NVIDIA-AI-IOT/jetbot.git
-
-
     # Install JetBot packages
     cd /
     cd workspace/jetbot
     pip3 install setuptools
     python3 setup.py install
+
+    # Clone this repo
+    cd /
+    git clone https://github.com/chieftain0/JetPath.git
+
     exit
     ```
