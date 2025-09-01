@@ -38,9 +38,11 @@
     sudo apt install python3-pip -y
 
     # Optional (Extend the image to the entire size of the SD card)
-    sudo apt install cloud-guest-utils
-    sudo growpart /dev/mmcblk0 1
-    sudo resize2fs /dev/mmcblk0p1
+    cd /
+    cd /usr/lib/nvidia/resizefs/
+    sudo chmod 777 nvresizefs.sh
+    sudo ./nvresizefs.sh
+    sudo reboot
 
     # Get the JetBot's IP address
     ip addr show wlan0
