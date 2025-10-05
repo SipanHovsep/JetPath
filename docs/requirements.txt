@@ -1,0 +1,7 @@
+sphinx
+furo
+myst-parser
+myst-nb
+sphinx-autobuild
+sphinxcontrib-mermaid
+sphinx.ext.napoleon
