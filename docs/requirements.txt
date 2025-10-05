@@ -1,7 +1,7 @@
-sphinx
+sphinx>=7.2
 furo
-myst-parser
-myst-nb
-sphinx-autobuild
+myst-parser>=2
+myst-nb>=1.0
 sphinxcontrib-mermaid
-sphinx.ext.napoleon
+# (Optional for local live reload; not needed on RTD)
+sphinx-autobuild
