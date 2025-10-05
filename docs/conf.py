@@ -3,7 +3,6 @@ sys.path.insert(0, os.path.abspath(".."))  # so autodoc sees your packages
 
 project = "JetPath"
 extensions = [
-    "myst_parser",
     "myst_nb",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",  # fine here
