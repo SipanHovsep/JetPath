@@ -8,7 +8,7 @@ extensions = [
     "sphinx.ext.napoleon",  # fine here
     "sphinx.ext.autosectionlabel",
 ]
-myst_enable_extensions = ["colon_fence", "linkify"]
+myst_enable_extensions = ["colon_fence"]
 nb_execution_mode = "off"  # build quickly without executing notebooks
 html_theme = "furo"
 html_title = "JetPath Docs"
