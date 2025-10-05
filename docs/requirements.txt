@@ -1,6 +1,5 @@
 sphinx>=7.2
 furo
-myst-parser>=2
 myst-nb>=1.0
 sphinxcontrib-mermaid
 # (Optional for local live reload; not needed on RTD)
