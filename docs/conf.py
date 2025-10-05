@@ -3,10 +3,10 @@ sys.path.insert(0, os.path.abspath(".."))  # so autodoc sees your packages
 
 project = "JetPath"
 extensions = [
-    "myst_parser",        # Markdown + MyST
-    "myst_nb",            # render notebooks (.ipynb/.md)
-    "sphinx.ext.autodoc", # API docs from docstrings
-    "sphinx.ext.napoleon",# Google/NumPy docstrings
+    "myst_parser",
+    "myst_nb",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",  # fine here
     "sphinx.ext.autosectionlabel",
 ]
 myst_enable_extensions = ["colon_fence", "linkify"]
